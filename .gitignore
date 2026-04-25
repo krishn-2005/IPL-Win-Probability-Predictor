@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+global_env_backups/
+deliveries.csv
+matches.csv
+main.ipynb
