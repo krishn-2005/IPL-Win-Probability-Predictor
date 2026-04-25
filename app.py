@@ -72,6 +72,14 @@ if st.button('Predict Probability'):
   result = pipe.predict_proba(input_df)
   loss = result[0][0]*100
   win = result[0][1]*100
-  st.header(batting_team + "-" + str(round(win,2)) + "%")
-  st.header(bowling_team + "-" + str(round(loss,2)) + "%")
+  st.subheader('Win/Loss Probability')
+  st.markdown(
+    f"""
+    <div style=\"width:100%; border:1px solid #d1d5db; border-radius:10px; overflow:hidden; display:flex; height:34px;\">
+      <div style=\"width:{win:.2f}%; background:#16a34a; color:white; display:flex; align-items:center; justify-content:center; font-weight:600;\">{batting_team} {win:.2f}%</div>
+      <div style=\"width:{loss:.2f}%; background:#dc2626; color:white; display:flex; align-items:center; justify-content:center; font-weight:600;\">{bowling_team} {loss:.2f}%</div>
+    </div>
+    """,
+    unsafe_allow_html=True
+  )
   
